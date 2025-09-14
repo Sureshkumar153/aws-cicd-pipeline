@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing dependencies...
+      - cd app
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Skipping build step (Node.js app is ready to deploy)
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: app
+
